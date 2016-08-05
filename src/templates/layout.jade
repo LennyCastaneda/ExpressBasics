@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+		//- adding head tag
+		include ./partials/_head.jade
+		
+		body#page-top
+
+			//-adding block content
+			//-lets jade know any page wanting to extend its layout can add its html here
+			include ./partials/_nav.jade
+			block content
+
+			//- adding scripts
+			//- loading jquery first
+			//- adding javascript at the end so that the browser will load html first and then javascript
+			script(src='/static/js/jquery.js')
+			// Bootstrap Core JavaScript
+			script(src='/static/js/bootstrap.min.js')
+			// Plugins JavaScript
+			script(src='/static/js/jquery.easing.min.js')
+			script(src='/static/js/jquery.fittext.js')
+			script(src='/static/js/wow.min.js')
+			// Custom Theme JavaScript
+			script(src='/static/js/creative.js')

@@ -1,0 +1,23 @@
+//- extending the layout template
+extends ./layout.jade
+
+//- adding the content block to define where the data is going 
+block content
+
+	//- accessing list data
+	//- whatever variable you use (ex. post) you will use in (ex. each "POST" in posts) so make use you use a good variable
+	//- Changed each to for based off video
+	for post in posts
+
+		//- coping text from video
+		section.post
+			.container
+				.row
+					.col-lg-8.col-lg-offset-2.text-center
+						h2.section-heading #{post.title}
+						hr.light
+						//- var is different compared to using the syntax when it is called in an href
+						p.text-faded #{post.description}
+						//- the href tag is based off the post title
+						//- when using var in this syntax it is different compared to using it in the body of the html
+						a(href='/blog/' + post.title).btn.btn-default.btn-x1 Read more!

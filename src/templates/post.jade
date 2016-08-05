@@ -1,0 +1,17 @@
+//- acessing value of obect by using the # and {}
+//-identify the variables you want to insert by adding the object and property name inside the braces
+//-adding the extend directive and block directives
+extends ./layout.jade
+block content
+    section.post
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2.text-center
+            h2.section-heading #{post.title}
+            
+            hr.light
+            
+            p.text-faded
+              | #{post.description}
+            .article
+              | #{post.description}
