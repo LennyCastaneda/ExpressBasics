@@ -1,0 +1,120 @@
+Express_Notes
+	Express is a fast unopinionated minimalist web framework for node.
+
+Routing in Express
+	Core component of the framework
+
+Jade Template Engine
+	use to render HTML in the front end
+
+Express Static Server
+	how express loads images, styles, scripts, and other static files to the browser
+
+Express.js is a web framework for Node.js
+
+Express has a complete API reference
+
+To install Express
+	npm install express --save
+
+Turn folder into a node project
+	run "npm init"
+
+To use node modules in a file they need to be "required" using the "require" method
+
+Route: (sometimes called an endpoint)
+	just a url
+
+Client: (possible web browser)
+	device used to visit the website
+
+When changes are made to the site, dont forget to restart the server
+	command c
+
+To run server
+	node src/app
+	from command line
+
+To run debugger
+	node-debug src/app.js
+
+*Run node inspector first
+	node-inspector
+		in another terminal you will run nodemon
+			nodemon --debug src/app.js
+				by adding -brk this will allow the terminal to stop on the debug brk that is in your code
+					nodemon --debug-brk src/app.js
+
+	***to kill a (PID) Process ID
+		In the command line do the following:
+			netstat -a -n -o | findstr :(ENTER YOUR PORT NUMBER)
+				taskkill /pid (ENTER THE PID)
+					ex. taskkill /pid 5728
+					if you need to force kill it use the following:
+					ex. taskkill /F /pid 5728
+
+Template Rendering
+	also known as views (templates)
+	the view is sent to the client as html 
+	templates have there own syntax and language
+	they live on the server and act as an html skeleton
+	template provides as a basic structure for a webpage
+
+Popular Templating Languages for 
+	Templates are static (their content changes)
+	they are stored on the server
+	You can use any template lang for express
+		Handlebars
+		EJS (Embedded JS)
+		JADE
+
+New blocks that are not defined will auto into <div>
+
+To render a template in the index route:
+	---> this should alread be there
+	app.get('/', function(req, res){
+  		res.render('index')
+	});
+
+	you will add this:
+	app.get('/blog/:PageYouAreRending?', function(req, res){
+  		res.render('CallingThePageToRenderFromResponse');
+	});
+
+Jade uses the 'block' keyword to break chunks of content up for use across different files, or to be changed dynamically.
+
+The static server should be used to serve the following types of files, EXCEPT: .JADE
+
+How to convert an object to an array in the command line
+	start express service with debug
+	launcch node inspector
+	add break point at app.js file
+	In command line type "posts"
+	use object.keys method to generate an array of keys from the posts object
+		Object.keys(posts)
+	arrays have a map method and receives a callback and the param is the key of the current postion in the array
+		Object.keys(posts).map(function(value){return posts[value]})
+	this is give you an array of each object
+
+Jade can iterate through **array objects** or **plain objects**.
+
+The following method:
+	'Object.keys(foobar)' 
+	will return an array of keys for an object called `foobar`.
+
+Template engines allow you to add logic directly into the template
+
+How data is routed from the server can not be accomplished using logic in Jade Templates
+
+Install express-generator
+	npm install express-generator -g
+		Use the express command with the param of the name of your app
+			express TESTAPP
+				once done follow the instruction
+				after you do the last thing 'npm install' you want to fire up the server
+					npm start
+						npm start will throw all the strang commmands to start your application into the package.json file
+
+
+
+
